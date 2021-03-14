@@ -1,0 +1,19 @@
+DAMN! YOU ARE SOMETHING!!!
+
+Going through 2000 books to get here, you have my salute!
+
+I hope it was not manual labor xD...
+
+without further ado... here is your book!
+
+
+The idea of hacking may conjure stylized images of electronic vandalism, espionage, dyed hair, and body piercings. Most people associate hacking with breaking the law and assume that everyone who engages in hacking activities is a criminal. Granted, there are people out there who use hacking techniques to break the law, but hacking isn’t really about that. In fact, hacking is more about following the law than breaking it. The essence of hacking is finding unintended or overlooked uses for the laws and properties of a given situation and then applying them in new and inventive ways to solve a problem—whatever it may be. The following math problem illustrates the essence of hacking: Use each of the numbers 1, 3, 4, and 6 exactly once with any of the four basic math operations (addition, subtraction, multiplication, and division) to total 24. Each number must be used once and only once, and you may define the order of operations; for example, 3 * (4 + 6) + 1 = 31 is valid, however incorrect, since it doesn’t total 24.
+
+The rules for this problem are well defined and simple, yet the answer eludes many. Like the solution to this problem (shown on the last page of this book), hacked solutions follow the rules of the system, but they use those rules in counterintuitive ways. This gives hackers their edge, allowing them to solve problems in ways unimaginable for those confined to conventional thinking and methodologies.
+
+
+flag: asia's_second_largest_technical_library_is_wonderful
+
+password
+main_canteen: name_of_this_book 
+ruby: petro_wale_soo_lucky

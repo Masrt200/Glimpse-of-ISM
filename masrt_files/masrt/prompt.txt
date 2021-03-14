@@ -1,0 +1,6 @@
+Masrt was in a hurry, he wanted to get the challenges for Glimpse asap before his vacation. Thinking Naughtb0y's wouldn't notice, he 
+decided to encrypt several messages with the same key.
+
+But alas, he lost the original message during his vacation and only remembers that it started with "did". Can you save Masrt and his innocence?
+
+Being overcatious, he also installed a pow system so that only select few get the encrypted messages.

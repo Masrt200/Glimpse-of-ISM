@@ -1,0 +1,6 @@
+7z a book$i $current
+xz $file -c> $file2
+gzip $file -c > $file2
+bzip2 $file -c > $file2
+tar -cf $file2 $file
+zip book$i #file
