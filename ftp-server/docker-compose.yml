@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  ftp-server:
+    image: fauria/vsftpd
+    restart: always
+    ports:
+      - 0.0.0.0:20:20
+      - 0.0.0.0:21:21
+      - 21100-21200:21100-21200
+    environment:
+      FTP_USER: myuser
+      FTP_PASS: mypass
+      PASV_ADDRESS: 127.0.0.1
+      PASV_MIN_PORT: 21100
+      PASV_MAX_PORT: 21200
+    volumes:
+      - /mnt/d/linux:/home/vsftpd/myuser
