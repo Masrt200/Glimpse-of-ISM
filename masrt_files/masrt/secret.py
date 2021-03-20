@@ -1,0 +1,1 @@
+current_password="fr0st_is_my_arch_nemesis"

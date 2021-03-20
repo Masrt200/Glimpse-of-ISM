@@ -12,8 +12,9 @@ The idea of hacking may conjure stylized images of electronic vandalism, espiona
 The rules for this problem are well defined and simple, yet the answer eludes many. Like the solution to this problem (shown on the last page of this book), hacked solutions follow the rules of the system, but they use those rules in counterintuitive ways. This gives hackers their edge, allowing them to solve problems in ways unimaginable for those confined to conventional thinking and methodologies.
 
 
-flag: asia's_second_largest_technical_library_is_wonderful
+flag: iog{asia's_second_largest_technical_library_is_wonderful}
 
-password
+passwords
+----------
 main_canteen: name_of_this_book 
 ruby: petro_wale_soo_lucky

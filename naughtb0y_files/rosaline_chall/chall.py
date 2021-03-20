@@ -1,4 +1,14 @@
 import subprocess
+from secret import current_password
+
+password=input("Sanity Check! input this level's password: ")
+try:
+	assert password==current_password
+	print("\033[32mpassed\033[0m")
+	print("-"*24)
+except AssertionError:
+	print("\033[93mnot all roses are red\033[0m")
+	exit()
 
 print("enter an command to run!!!")
 

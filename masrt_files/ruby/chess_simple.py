@@ -1,6 +1,6 @@
 import random
 from functools import reduce
-from secret import flag,password
+from secret import flag,password,current_password
 
 
 def make_chessboard(init):
@@ -29,6 +29,19 @@ def me_n_warden(init):
 	init[my_flip]^=1
 
 	return warden_key,init
+
+
+password=input("Sanity Check! input this level's password: ")
+try:
+	assert password==current_password
+	print("\033[32mpassed\033[0m")
+	print("-"*24)
+except AssertionError:
+	print("\033[93mYou love flowers?\033[0m")
+	exit()
+
+
+
 
 win=True
 

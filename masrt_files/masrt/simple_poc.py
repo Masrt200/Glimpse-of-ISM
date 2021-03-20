@@ -1,5 +1,17 @@
 from hashlib import sha256
 import os
+from secret import current_password
+
+password=input("Sanity Check! input this level's password: ")
+try:
+	assert password==current_password
+	print("\033[32mpassed\033[0m")
+	print("-"*24)
+except AssertionError:
+	print("\033[93mGoto a Doctor\033[0m")
+	exit()
+
+
 message="enter a string whose sha256 hash in hex satisfies, sha256(string[-6:]) ="
 
 def hash_gen():
