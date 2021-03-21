@@ -6,9 +6,7 @@ const path = require("path")
 
 
 const app = express()
-
-app.set("view engine", "ejs")
-app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
 app.use(cookieParser())
 app.use(bodyparser.urlencoded({ extended: false }))
 
@@ -27,7 +25,7 @@ function signJWT(data) {
 }
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname+"/public/login.html"))
+    res.render('login')
 })
 
 app.get("/flag", async(req, res) => {
@@ -36,16 +34,16 @@ app.get("/flag", async(req, res) => {
     try{
         await jwt.verify(cookie['token'], jwt_secret, (err, authData) => {
             if (err) {
-                res.status(403).send("I dont know what you trying to doo!!!")
+                res.status(403).render('403')
             }
             else {
                 var decoded = jwt.decode(cookie['token'])
                 if (decoded.faccha === str_rot13('true')) {
-                    res.send('Access Denied: You are still  a Faccha!!! Noooooob xD');
+                    res.status(403).render('403')
                     return;
                 }
                 else {
-                    res.send(flag)
+                    res.render('flag')
                 }
             }
         })
@@ -62,7 +60,7 @@ app.post("/login", (req, res) => {
     if (username && password) { 
         var token = signJWT({ "user": str_rot13(username), "faccha": str_rot13("true") })
         res.cookie('token', token, { maxAge: 900000, httpOnly: true });
-        res.sendFile(path.join(__dirname+"/public/dashboard.html"))
+        res.render('dashboard')
     }
     else {
         res.send("What are you trying to do")
