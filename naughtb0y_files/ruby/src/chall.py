@@ -1,34 +1,47 @@
 import random
 from functools import reduce
-from secret import flag,password
+from secret import flag,password,current_password
 
 
 def make_chessboard(init):
-    
-    board="-"*33+"\n"
-    for i in range(8):
-        board+="|"
-        for j in range(8):
-            if init[i*8+j]:
-                board+=" H "
-            else:
-                board+=" T "
-            board+="|"
+	
+	board="-"*33+"\n"
+	for i in range(8):
+		board+="|"
+		for j in range(8):
+			if init[i*8+j]:
+				board+=" H "
+			else:
+				board+=" T "
+			board+="|"
 
-        board+="\n"+"-"*33+"\n"
-    return board
+		board+="\n"+"-"*33+"\n"
+	return board
 
 
 def me_n_warden(init):
 
-    warden_key=random.randint(0, 63)
+	warden_key=random.randint(0, 63)
 
-    current_state=reduce(lambda x,y: x^y, [i for i,bit in enumerate(init) if bit])
-    
-    my_flip=current_state^warden_key
-    init[my_flip]^=1
+	current_state=reduce(lambda x,y: x^y, [i for i,bit in enumerate(init) if bit])
+	
+	my_flip=current_state^warden_key
+	init[my_flip]^=1
 
-    return warden_key,init
+	return warden_key,init
+
+
+password=input("Sanity Check! input this level's password: ")
+try:
+	assert password==current_password
+	print("\033[32mpassed\033[0m")
+	print("-"*24)
+except AssertionError:
+	print("\033[93mYou love flowers?\033[0m")
+	exit()
+
+
+
 
 win=True
 
@@ -39,32 +52,34 @@ messages=[b"Here's your chessboard, find the Key\n\n",b"\nApparently, the warden
 FAIL=["RIP Weroix","I hope you live to tell this story","Better find a broken window on the 3rd floor","Warden ka lathi ka sound kabhi suna hai?","Best Wishes, Prof. Rajiv Shekhar"]
 
 for i in range(5):
-    print(messages[i].decode())
+	print(messages[i].decode())
 
-    premise=[random.randint(0,1) for i in range(64)]
-    key_location,premise=me_n_warden(premise)
+	premise=[random.randint(0,1) for i in range(64)]
+	key_location,premise=me_n_warden(premise)
 
-    print(make_chessboard(premise))
-    try:
-        your_guess=input("key's at: ")
-    except:
-        win=False
-        break
+	print(make_chessboard(premise))
+	try:
+		your_guess=input("key's at: ")
+	except:
+		win=False
+		break
 
-    try:
-        your_guess=int(your_guess)
-    except:
-        win=False
-        break
+	try:
+		your_guess=int(your_guess)
+	except:
+		win=False
+		break
 
-    if your_guess==key_location:
-        print("Impressed")
-    else:
-        win=False
-        print("\n"+random.choice(FAIL))
-        break
+	if your_guess==key_location:
+		print("Impressed")
+	else:
+		win=False
+		print("\n"+random.choice(FAIL))
+		break
 
 if win:
-    print("\nThe Warden hopes you enjoy your date, Until next time")
-    print("oh take this-->",flag)
-    print("password:",password)
+	print("\nThe Warden hopes you enjoy your date, Until next time")
+	print("oh take this-->",flag)
+	print("password:",password)
+
+
