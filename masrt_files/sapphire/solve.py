@@ -5,8 +5,12 @@ N=[]
 
 found=0
 while True:
-	r=remote('127.0.0.1',1337)
+	r=remote('ctf.glimpse-of-ism.ml',7001)
 
+	print(r.recv(1024))
+	r.sendline(b'the_best_hostel_period')
+	print(r.recvline())
+	r.recvline()
 	r.recvline()
 	r.recvline()
 	r.recvline()

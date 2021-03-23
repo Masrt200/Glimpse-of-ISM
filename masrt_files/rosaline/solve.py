@@ -1,6 +1,12 @@
 from pwn import *
 from string import printable
-s = remote("127.0.0.1", 1337)
+s = remote("ctf.glimpse-of-ism.ml", 5001)
+
+print(s.recv(1024))
+s.sendline(b'this_server_is_notorious')
+print(s.recvline())
+s.recvline()
+
 
 flag = ""
 alphabet=a=",:!abcdefghijklmnopqrstuvwxyz_1234567890{}ABCDEFGHIJKLMNOPQRSTUVWXYZ "
