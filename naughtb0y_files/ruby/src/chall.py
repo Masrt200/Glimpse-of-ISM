@@ -1,6 +1,6 @@
 import random
 from functools import reduce
-from secret import flag,password,current_password
+from secret import flag,next_password,current_password
 
 
 def make_chessboard(init):
@@ -80,6 +80,6 @@ for i in range(5):
 if win:
 	print("\nThe Warden hopes you enjoy your date, Until next time")
 	print("oh take this-->",flag)
-	print("password:",password)
+	print("password:",next_password)
 
 
