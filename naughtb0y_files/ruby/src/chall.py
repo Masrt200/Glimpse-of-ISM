@@ -1,6 +1,7 @@
 import random
 from functools import reduce
 from secret import flag,next_password,current_password
+from threading import Timer
 
 
 def make_chessboard(init):
@@ -59,7 +60,11 @@ for i in range(5):
 
 	print(make_chessboard(premise))
 	try:
+		timeout=20
+		t = Timer(timeout, print, ['\nYup, I am a bitch... you gotta be fast'])
+		t.start()
 		your_guess=input("key's at: ")
+		t.cancel()
 	except:
 		win=False
 		break
