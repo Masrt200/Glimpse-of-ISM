@@ -1,7 +1,7 @@
 import random
 from functools import reduce
 from secret import flag,next_password,current_password
-from threading import Timer
+import time
 
 
 def make_chessboard(init):
@@ -60,11 +60,13 @@ for i in range(5):
 
 	print(make_chessboard(premise))
 	try:
-		timeout=20
-		t = Timer(timeout, print, ['\nYup, I am a bitch... you gotta be fast'])
-		t.start()
+		timeout=5
+		t1=time.time()
 		your_guess=input("key's at: ")
-		t.cancel()
+		t2=time.time()
+		if (t2-t1)>timeout:
+			print("Yup, I am a bitch... you gotta be fast")
+			exit()
 	except:
 		win=False
 		break
