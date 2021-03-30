@@ -60,12 +60,12 @@ for i in range(5):
 
 	print(make_chessboard(premise))
 	try:
-		timeout=5
+		timeout=10
 		t1=time.time()
 		your_guess=input("key's at: ")
 		t2=time.time()
-		if (t2-t1)>timeout:
-			print("Yup, I am a bitch... you gotta be fast")
+		if (t2-t1)>timeout and i!=0:
+			print("Yup, I am a bitch... you gotta be fast... first one was practice")
 			exit()
 	except:
 		win=False

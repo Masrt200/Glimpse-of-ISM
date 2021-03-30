@@ -12,11 +12,12 @@ for i in range(5):
 	
 
 	data=r.recv(4096).decode()
+
+	
 	print(data)
 	data=data.split("\n\n\n")[1].replace("-",'')
 	data=data.replace(' ','')[:-10].replace('|','').replace('\n','')
 	print(data)
-
 	val=0
 	for i in range(64):
 		if data[i]=='H':

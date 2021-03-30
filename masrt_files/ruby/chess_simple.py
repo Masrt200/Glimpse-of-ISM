@@ -1,6 +1,7 @@
 import random
 from functools import reduce
 from secret import flag,password,current_password
+from threading import Timer
 
 
 def make_chessboard(init):
@@ -48,7 +49,7 @@ win=True
 title=b"          _  _  _      __  _  _ ____ _ _ \n\\    //\\ |_)| \\|_|\\ |/(_  / \\|_|_ | / |_ \n \\/\\//--\\| \\|_/|_| \\| __) \\_/| | _|_\\_|_ \n                                         \n"
 print(title.decode())
 
-messages=[b"Here's your chessboard, find the Key\n\n",b"\nApparently, the warden knows about the BF approach.\n Four more doors await you\n\n",b"\nTime is of the essence, 3 to go\n\n",b"\nPENULTIMATE DOOR\n\n",b"\nI see freedom!? Shinzou Sasaageo!!!\n\n"]
+messages=[b"Here's your chessboard, find the Key\n\n",b"\nApparently, the warden knows about the BF approach.\nFour more doors await you\n\n",b"\nTime is of the essence, 3 to go\n\n",b"\nPENULTIMATE DOOR\n\n",b"\nI see freedom!? Shinzou Sasaageo!!!\n\n"]
 FAIL=["RIP Weroix","I hope you live to tell this story","Better find a broken window on the 3rd floor","Warden ka lathi ka sound kabhi suna hai?","Best Wishes, Prof. Rajiv Shekhar"]
 
 for i in range(5):
@@ -59,7 +60,11 @@ for i in range(5):
 
 	print(make_chessboard(premise))
 	try:
+		timeout=10
+		t = Timer(timeout, print, ['\nYup, I am a bitch... you gotta be fast'])
+		t.start()
 		your_guess=input("key's at: ")
+		t.cancel()
 	except:
 		win=False
 		break
