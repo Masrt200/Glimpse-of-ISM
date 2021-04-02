@@ -24,7 +24,7 @@ for k in range(len(images)):
 	ims.append(im1)
 	
 
-pix_wid=5
+pix_wid=3
 files=4
 
 for j in range(0,1800,files*pix_wid):

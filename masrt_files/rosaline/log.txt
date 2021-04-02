@@ -54,3 +54,8 @@ Wed Mar 10 22:46:22 2021 close from ('127.0.0.1', 35712) due to [Errno 104] Conn
 Wed Mar 10 22:46:22 2021 connect from ('127.0.0.1', 35714)
 Wed Mar 10 22:48:00 2021 connect from ('127.0.0.1', 35716)
 Wed Mar 10 22:48:00 2021 close from ('127.0.0.1', 35716) due to [Errno 104] Connection reset by peer
+Wed Mar 31 19:36:12 2021 connect from ('127.0.0.1', 43886)
+Wed Mar 31 19:36:26 2021 connect from ('127.0.0.1', 43888)
+Wed Mar 31 19:43:37 2021 close from ('127.0.0.1', 43888) due to [Errno 32] Broken pipe
+Wed Mar 31 19:43:38 2021 connect from ('127.0.0.1', 43952)
+Wed Mar 31 19:43:50 2021 close from ('127.0.0.1', 43952) due to [Errno 32] Broken pipe
